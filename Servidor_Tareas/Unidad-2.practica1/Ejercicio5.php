@@ -1,6 +1,6 @@
 <?php
-$a=5;
-$b=-9;
+$a=-6;
+$b=4;
 $c=3;
 
 echo "Ecuacion de segundo grado: $a*x^2 + $b*x + $c = 0<br>";
