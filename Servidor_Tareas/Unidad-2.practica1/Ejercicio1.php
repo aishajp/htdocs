@@ -1,8 +1,8 @@
 <?php
 
-$num1=20;
-$num2=20;
-echo "<Los numeros son: ".$num1." y ".$num2."<br>";
+$num1=50;
+$num2=30;
+echo "Los numeros son: ".$num1." y ".$num2."<br>";
 if($num1 == $num2){
     echo "Los numeros son iguales";
     $solucion = $num1 * $num2;
@@ -16,3 +16,4 @@ if($num1 == $num2){
     $solucion = $num2 + $num1;
     echo "<br>La suma es: ".$solucion;
 }
+?>
