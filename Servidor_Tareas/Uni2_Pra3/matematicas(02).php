@@ -1,4 +1,5 @@
 <?php
+// matematicas.php
 function solveQuadraticEquation($a, $b, $c) {
     // Calcula el discriminante
     $discriminant = pow($b, 2) - 4 * $a * $c;
@@ -20,16 +21,5 @@ function solveQuadraticEquation($a, $b, $c) {
     else {
         return false;
     }
-}
-
-// Ejemplo
-$a = 4;
-$b = -5;
-$c = 2;
-$result = solveQuadraticEquation($a, $b, $c);
-if ($result === false) {
-    echo "No hay soluciones reales.";
-} else {
-    echo "Soluciones: " . implode(", ", $result);
 }
 ?>
