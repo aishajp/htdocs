@@ -1,7 +1,5 @@
 <?php
-/*Escribe un script para probar algunas de las funciones mostradas debajo, el sript 
-ha de contener al menos tres funciones de cada bloque: 
-
+/*
 - Funciones variables empty($var), is_null($var) and isset($var)
 
 - Funciones de cadena strlen($cad), stetolower($cad) and str($cad1, $cad2)
