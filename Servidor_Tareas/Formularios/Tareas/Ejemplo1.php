@@ -1,4 +1,5 @@
 <?php
+//ejercicio 5
 echo"<form>";
 for ($i = 0; $i <10; $i++) {
     echo<<<_END
