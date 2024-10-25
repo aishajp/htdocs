@@ -6,8 +6,9 @@
     
     height: 200px;
     display: flex; /*pone el contenido en fila*/
-    flex-direction: column;/*lo pone en columnas*/
-    flex-wrap: wrap;
+    flex-direction: row;/*lo pone en columnas*/
+    /*flex-wrap: wrap;*/
+    justify-content: space-around;
     margin: 20px auto;
     padding: 10px;
     width: 60%;
