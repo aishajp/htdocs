@@ -9,12 +9,14 @@ p {
 }
 
 body {
+
   background-color: red;
+
 }
 .container {
   background-color: blue;
   color: #666666;
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
 }
 
@@ -37,7 +39,7 @@ header {
 
 /* El menú */
 nav {
- width: 10%;
+ width: 14%;
  padding: 1em;
 
   
