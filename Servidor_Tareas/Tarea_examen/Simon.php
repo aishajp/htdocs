@@ -24,28 +24,28 @@ puse es igual a la q se mostro anteriormente y comprobarlo */
     <table>
       <tr>
         <td>
-          <button type="submit" name="eleccion" value="red">
-            <svg width="50" height="50" display=block border-radius=50% style="background-color: red">
+          <button type="submit" name="eleccion" value="red" style="border-radius:50%">
+            <svg width="100" height="100" display=block border-radius=50% style="background-color: red; border-radius:50%">
             </svg>
           </button>
         </td>
         <td>
-          <button type="submit" name="eleccion" value="yellow">
-          <svg width="50" height="50" display=block border-radius=50% style="background-color: yellow">
+          <button type="submit" name="eleccion" value="yellow" style="border-radius:50%">
+          <svg width="100" height="100" display=block  style="background-color: yellow; border-radius:50%">
             </svg>
           </button>
         </td>
       </tr>
       <tr>
         <td>
-          <button type="submit" name="eleccion" value="blue">
-          <svg width="50" height="50" display=block border-radius=50% style="background-color: blue">
+          <button type="submit" name="eleccion" value="blue" style="border-radius:50%">
+          <svg width="100" height="100" display=block border-radius=50% style="background-color: blue; border-radius:50%">
             </svg>
           </button>
         </td>
         <td>
-          <button type="submit" name="eleccion" value="green">
-          <svg width="50" height="50" display=block border-radius=50% style="background-color: green">
+          <button type="submit" name="eleccion" value="green" style="border-radius:50%" >
+          <svg width="100" height="100" display=block border-radius=50% style="background-color: green; border-radius:50%">
             </svg>
           </button>
         </td>
