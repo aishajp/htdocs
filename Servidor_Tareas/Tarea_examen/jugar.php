@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header('Location: index.php');
-    exit();
-}
-
 // Inicializar la selección del usuario si no está ya en la sesión
 if (!isset($_SESSION['seleccion_usuario'])) {
     $_SESSION['seleccion_usuario'] = [];

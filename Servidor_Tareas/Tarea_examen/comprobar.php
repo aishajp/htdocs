@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header('Location: index.php');
-    exit();
-}
-
 $combinacion = $_SESSION['combinacion'];
 $seleccionUsuario = $_SESSION['seleccion_usuario'];
 $acierto = ($combinacion === $seleccionUsuario);
@@ -38,7 +33,7 @@ $_SESSION['seleccion_usuario'] = [];
         }
         ?>
     <?php endif; ?>
-    <form action="inicio.php">
+    <form action="index.php">
         <button type="submit">Volver a jugar</button>
     </form>
 </body>

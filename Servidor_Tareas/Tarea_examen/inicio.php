@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header('Location: index.php');
-    exit();
-}
-
 // Generar combinación de colores aleatoria
 $colores = ['red', 'blue', 'yellow', 'green'];
 $combinacion = [];
@@ -31,7 +26,6 @@ $_SESSION['combinacion'] = $combinacion;
     </style>
 </head>
 <body>
-    <h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?></h2>
     <h3>Combinación de colores generada</h3>
     <?php
     foreach ($combinacion as $color) {
