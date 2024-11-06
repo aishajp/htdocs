@@ -8,9 +8,12 @@
   grid-column-gap: 10px;
   grid-row-gap: 20px;
   justify-content: start;  
+  
   grid-template-columns: 20% 20% 20%;
   grid-template-rows: repeat(3, 20%);
+  
   align-content: space-evenly;
+  
   height: 600px;  
   margin: 20px auto;
   padding: 1em;
