@@ -1,8 +1,5 @@
 <?php
-/* Generar una combinacion de 4 colores, y un boton de jugar.
-Pantalla principal 4 circulos negros con 4 botones con 1 color 
-diferente cada uno y luego comprobar si la combinacion que yo 
-puse es igual a la q se mostro anteriormente y comprobarlo */
+
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +16,7 @@ puse es igual a la q se mostro anteriormente y comprobarlo */
   <h1>Simon</h1>
 
   <form action="simon-1-2.php" method="get">
-    <p>Pulse en los colores:</p>
+    <p>Memoriza la siguiente combinacion</p>
 
     <table>
       <tr>
@@ -52,5 +49,5 @@ puse es igual a la q se mostro anteriormente y comprobarlo */
       </tr>
     </table>
 
-    <p><input type="submit" name="eleccion" value="Reiniciar"></p>
+    <p><input type="submit" name="eleccion" value="JUGAR"></p>
   </form>
