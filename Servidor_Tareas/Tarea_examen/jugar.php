@@ -27,7 +27,6 @@ if (isset($_SESSION['seleccion_usuario']) && count($_SESSION['seleccion_usuario'
             height: 50px;
             border-radius: 50%;
             display: inline-block;
-            background-color: black;
             margin: 5px;
         }
         .boton-color {
@@ -43,12 +42,17 @@ if (isset($_SESSION['seleccion_usuario']) && count($_SESSION['seleccion_usuario'
 <body>
     <h3>Selecciona la secuencia de colores</h3>
     <div>
-        <?php for ($i = 0; $i < 4; $i++): ?>
-            <div class="circulo-negro"></div>
+        <?php 
+        // Mostrar los colores seleccionados o negro si no hay seleccion
+        for ($i = 0; $i < 4; $i++): 
+            $color = isset($_SESSION['seleccion_usuario'][$i]) ? $_SESSION['seleccion_usuario'][$i] : 'black';
+        ?>
+            <div class="circulo-negro" style="background-color: <?= htmlspecialchars($color) ?>;"></div>
         <?php endfor; ?>
     </div>
     <form action="jugar.php" method="post">
         <?php
+        // Botones de selección de color
         foreach (['red', 'blue', 'yellow', 'green'] as $color) {
             echo "<button type='submit' name='color' value='$color' class='boton-color' style='background-color: $color;'></button>";
         }
