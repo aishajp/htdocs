@@ -33,7 +33,7 @@ $_SESSION['seleccion_usuario'] = [];
         }
         ?>
     <?php endif; ?>
-    <form action="index.php">
+    <form action="inicio.php">
         <button type="submit">Volver a jugar</button>
     </form>
 </body>

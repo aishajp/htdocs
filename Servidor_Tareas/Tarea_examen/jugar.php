@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-// Inicializar la selección del usuario si no está ya en la sesión
-if (!isset($_SESSION['seleccion_usuario'])) {
-    $_SESSION['seleccion_usuario'] = [];
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['color'])) {
     $_SESSION['seleccion_usuario'][] = $_POST['color'];
 }
