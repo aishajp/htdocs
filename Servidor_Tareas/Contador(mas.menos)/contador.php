@@ -27,6 +27,16 @@ if (isset($_POST['accion'])) {
 <head>
     <meta charset="UTF-8">
     <title>Contador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        span {
+            font-size: 2em;
+            padding: 0 1em;
+        }
+    </style>
 </head>
 <body>
     <h1>Contador</h1>
