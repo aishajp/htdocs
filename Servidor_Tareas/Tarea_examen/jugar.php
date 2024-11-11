@@ -2,11 +2,15 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['color'])) {
+    // Asegura que 'seleccion_usuario' está inicializado como array
+    if (!isset($_SESSION['seleccion_usuario'])) {
+        $_SESSION['seleccion_usuario'] = [];
+    }
     $_SESSION['seleccion_usuario'][] = $_POST['color'];
 }
 
-// Verificar si el usuario ha completado la secuencia
-if (count($_SESSION['seleccion_usuario']) === 4) {
+// Verifica si 'seleccion_usuario' está definido y es un array antes de usar count()
+if (isset($_SESSION['seleccion_usuario']) && count($_SESSION['seleccion_usuario']) === 4) {
     header('Location: comprobar.php');
     exit();
 }
