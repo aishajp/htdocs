@@ -8,14 +8,22 @@ if (!isset($_SESSION["numero_binario"])) {
     $numero_binario = $_SESSION["numero_binario"]; 
 } 
  
-$cartas = str_split($numero_binario); 
+$imagenes = [ 
+    "ocho.jpg",
+    "cuatros.jpg",  
+    "dos.jpg", 
+    "Uno.jpg" 
+]; 
  
 echo "<h2>Adivina el número en decimal</h2>"; 
 echo '<label>El numero en BINARIO:'.$numero_binario.'</label>'; 
 echo '<br><br>';
-foreach ($cartas as $bit) { 
-    echo '<div style="display:inline-block; width:50px; height:50px; margin:5px; background-color:'.($bit == "1" ? "black" : "gray").';"></div>'; 
-} 
+
+for ($i = 0; $i < 4; $i++) { 
+    $bit = $numero_binario[$i]; 
+    $imagen = ($bit == "1") ? $imagenes[$i] : "carta_blanca.png"; 
+    echo '<img src="' . $imagen . '" alt="Carta ' . $bit . '" style="width:50px; height:75px; margin:5px;">'; 
+}
  
 echo '<form method="POST" action="Adivinar_Decimal21.php">';  
 echo '<label>Numero decimal </label>'; 
