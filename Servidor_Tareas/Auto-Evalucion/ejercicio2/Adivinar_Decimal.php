@@ -21,7 +21,7 @@ echo '<br><br>';
 
 for ($i = 0; $i < 4; $i++) { 
     $bit = $numero_binario[$i]; 
-    $imagen = ($bit == "1") ? $imagenes[$i] : "carta_blanca.png"; 
+    $imagen = ($bit == "1") ? $imagenes[$i] : "blanco.jpg"; 
     echo '<img src="' . $imagen . '" alt="Carta ' . $bit . '" style="width:50px; height:75px; margin:5px;">'; 
 }
  
