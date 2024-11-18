@@ -10,7 +10,7 @@ if (!isset($_SESSION["numero_binario"])) {
  
 $imagenes = [ 
     "ocho.jpg",
-    "cuatros.jpg",  
+    "cuatro.jpg",  
     "dos.jpg", 
     "Uno.jpg" 
 ]; 
