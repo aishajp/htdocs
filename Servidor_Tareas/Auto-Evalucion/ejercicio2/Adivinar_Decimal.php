@@ -30,4 +30,4 @@ echo '<label>Numero decimal </label>';
 echo '<input type="number" name="adivinar" min="0" max="15" required>'; 
 echo '<button type="submit">Adivinar</button>'; 
 echo '</form>'; 
-?> 
+?>
