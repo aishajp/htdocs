@@ -1,4 +1,3 @@
-/* Estilos generales */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -20,7 +19,6 @@ nav, .wrapper, footer {
   margin: 0 auto;
 }
 
-/* Menú superior fijo */
 nav {
   background-color: #121867;
   color: rgb(243, 55, 132);
@@ -37,7 +35,6 @@ nav .menu-item {
   padding: 5px;
 }
 
-/* Barra lateral fija */
 .lateral {
   background-color: #121867;
   border: 2px solid black;
@@ -55,7 +52,6 @@ nav .menu-item {
   height: auto;
 }
 
-/* Cabecera */
 header {
   position: relative;
   text-align: center;
@@ -85,7 +81,6 @@ aside a {
   text-decoration: none;
 }
 
-/* Estilos principales */
 main {
   margin: 0 auto;
   width: 80%;
@@ -103,7 +98,6 @@ main h1::after, main::after {
   margin: 30px auto 0;
 }
 
-/* Sección de productos (OpenWebinars) */
 .productos {
   display: flex;
   justify-content: center;
@@ -120,7 +114,6 @@ main h1::after, main::after {
   width: 60%;
 }
 
-/* Sección de descripción con botellas */
 .descripcion {
   display: flex;
   justify-content: space-between;
@@ -138,7 +131,6 @@ main h1::after, main::after {
   margin: 0 20px;
 }
 
-/* Galería centrada */
 .galeria {
   display: flex;
   justify-content: center;
@@ -152,7 +144,6 @@ main h1::after, main::after {
   margin: 0 10px;
 }
 
-/* Pie de página */
 footer {
   background-color: #121867;
   color: rgb(243, 55, 132);
@@ -173,6 +164,6 @@ footer .redes-sociales {
 }
 
 footer img {
-  width: 30%; /* Iconos grandes */
+  width: 30%; 
   margin: 10px;
 }
