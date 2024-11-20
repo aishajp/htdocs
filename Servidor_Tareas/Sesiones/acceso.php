@@ -17,5 +17,7 @@
         <input type="submit" value="Entrar">
         <input type="reset" value="Limpiar">
     </form>
+    <br>
+<a href="registro.php">Registrate</a>
 </body>
 </html>

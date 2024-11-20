@@ -1,7 +1,7 @@
 <?php
 
-$usu = 'pepito';
-$contra = '123';
+$usu = $usu_form;
+$contra = $contra_form;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu_form = $_POST['usuario'] ?? '';
