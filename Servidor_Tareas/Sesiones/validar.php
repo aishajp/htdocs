@@ -1,18 +1,32 @@
 <?php
+session_start(); 
 
-$usu = $usu_form;
-$contra = $contra_form;
+$usuarios_archivo = 'usuarios.txt';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usu_form = $_POST['usuario'] ?? '';
-    $contra_form = $_POST['contrasena'] ?? '';
+    $usuario = $_POST['usuario'] ?? '';
+    $contrasena = $_POST['contrasena'] ?? '';
 
-    if ($usu_form === $usu && $contra_form === $contra) {
-        echo "Bienvenid@ " . htmlspecialchars($usu_form);
-    } else {
-        echo "Los datos introducidos no son correctos.";
+    if (empty($usuario) || empty($contrasena)) {
+        echo "Por favor completa todos los campos.";
+        exit;
     }
+
+    if (file_exists($usuarios_archivo)) {
+        $usuarios = file($usuarios_archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($usuarios as $linea) {
+            list($usuario_registrado, $hash_contrasena, $rol) = explode(':', $linea);
+            if ($usuario === $usuario_registrado && password_verify($contrasena, $hash_contrasena)) {
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['rol'] = $rol;
+                echo "Bienvenido, " . htmlspecialchars($usuario) . " (Rol: " . htmlspecialchars($rol) . ")!";
+                exit;
+            }
+        }
+    }
+
+    echo "Usuario o contraseña incorrectos.";
 } else {
-    echo "Acceso no permitido.";
+    echo "Método no permitido.";
 }
 ?>
