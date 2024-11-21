@@ -40,3 +40,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Método no permitido.";
 }
 ?>
+<br>
+<a href="acceso.php">Iniciar Sesión</a>
