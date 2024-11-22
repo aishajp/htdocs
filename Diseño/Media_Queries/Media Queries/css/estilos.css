@@ -29,14 +29,32 @@ header {
   background-color: green;
 }
 
-@media screen and (min-width: 576px) {
+.violet {
+  background-color: violet;
+}
+
+.black {
+  background-color: black;
+  height: 75px;
+}
+
+@media screen and (max-width: 575px) {
+  .container > * {
+    width: 100%;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
   .red,
-  .blue {
+  .blue,
+  .green,
+  .violet {
     float: left;
     width: 50%;
   }
 
-  .green {
+  .black {
     float: left;
     width: 100%;
   }
@@ -48,6 +66,13 @@ header {
   .green {
     float: left;
     width: 33.33%;
+  }
+
+  .violet,
+  .black {
+    float: left;
+    width: 50%;
+    height: 150px;
   }
 }
 
