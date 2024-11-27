@@ -3,64 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaderAvilés - Carpentry Management</title>
+    <title>MaderAvilés - Gestión de Carpintería</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>MaderAvilés</h1>
         <nav>
-            <button onclick="showSection('orders-section')">Manage Orders</button>
-            <button onclick="showSection('pieces-section')">Manage Pieces</button>
+            <button onclick="mostrarSeccion('seccion-pedidos')">Gestión de Pedidos</button>
+            <button onclick="mostrarSeccion('seccion-piezas')">Gestión de Piezas</button>
         </nav>
     </header>
     <main>
-
-        <section id="orders-section" class="hidden">
-            <h2>Orders</h2>
-            <form id="order-form">
-                <input type="number" id="order-id" placeholder="Order Number" min="1" required>
-                <input type="text" id="client-name" placeholder="Client Name" maxlength="50" required>
-                <input type="date" id="order-date" required>
-                <button type="submit">Add Order</button>
+        <!-- Sección de Pedidos -->
+        <section id="seccion-pedidos" class="oculto">
+            <h2>Pedidos</h2>
+            <form id="formulario-pedidos">
+                <input type="number" id="id-pedido" placeholder="Número de Pedido" min="1" required>
+                <input type="text" id="nombre-cliente" placeholder="Nombre del Cliente" maxlength="50" required>
+                <input type="date" id="fecha-pedido" required>
+                <button type="submit">Añadir Pedido</button>
             </form>
-            <table id="orders-table">
+            <table id="tabla-pedidos">
                 <thead>
                     <tr>
-                        <th>Order #</th>
-                        <th>Client</th>
-                        <th>Date</th>
-                        <th>Processed</th>
-                        <th>Served</th>
+                        <th>Número</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Procesado</th>
+                        <th>Servido</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
         </section>
 
-        <section id="pieces-section" class="hidden">
-            <h2>Pieces</h2>
-            <form id="piece-form">
-                <input type="number" id="piece-id" placeholder="Piece Number" min="1" required>
-                <input type="number" id="piece-order-id" placeholder="Order Number" min="1" required>
-                <input type="number" id="length" placeholder="Length (cm)" min="1" required>
-                <input type="number" id="width" placeholder="Width (cm)" min="1" required>
-                <input type="number" id="thickness" placeholder="Thickness (cm)" min="1" required>
+        <!-- Sección de Piezas -->
+        <section id="seccion-piezas" class="oculto">
+            <h2>Piezas</h2>
+            <form id="formulario-piezas">
+                <input type="number" id="id-pieza" placeholder="Número de Pieza" min="1" required>
+                <input type="number" id="pedido-pieza" placeholder="Número de Pedido" min="1" required>
+                <input type="number" id="largo" placeholder="Largo (cm)" min="1" required>
+                <input type="number" id="ancho" placeholder="Ancho (cm)" min="1" required>
+                <input type="number" id="grosor" placeholder="Grosor (cm)" min="1" required>
                 <select id="color">
                     <option value="Natural">Natural</option>
-                    <option value="Oak">Oak</option>
-                    <option value="Cherry">Cherry</option>
+                    <option value="Roble">Roble</option>
+                    <option value="Cerezo">Cerezo</option>
                 </select>
-                <button type="submit">Add Piece</button>
+                <button type="submit">Añadir Pieza</button>
             </form>
-            <table id="pieces-table">
+            <table id="tabla-piezas">
                 <thead>
                     <tr>
-                        <th>Piece #</th>
-                        <th>Order #</th>
-                        <th>Length</th>
-                        <th>Width</th>
-                        <th>Thickness</th>
+                        <th>Número</th>
+                        <th>Pedido</th>
+                        <th>Largo</th>
+                        <th>Ancho</th>
+                        <th>Grosor</th>
                         <th>Color</th>
                     </tr>
                 </thead>
@@ -68,8 +69,8 @@
             </table>
         </section>
     </main>
-    <script src="app.js"></script>
-    <script src="orders.js"></script>
-    <script src="pieces.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pedidos.js"></script>
+    <script src="js/piezas.js"></script>
 </body>
 </html>
