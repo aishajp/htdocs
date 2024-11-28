@@ -14,7 +14,7 @@
         <input type="text" name="usu"/><br> 
         <label for="password">Contraseña:</label><br> 
         <input type="password" name="pass"/><br> 
-        <p>¿No tienes cuenta?</p> <a href="#">Regístrate</a><br> 
+        <p>¿No tienes cuenta?</p> <a href="registrarse.php">Regístrate</a><br> 
         <input type="submit" name="enviar" value="Enviar"/> 
     </form> 
 </body> 

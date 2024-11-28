@@ -1,5 +1,4 @@
 <?php 
-
 session_start(); 
 /*conectarse a la base de datos*/ 
 require_once "login.php";  
