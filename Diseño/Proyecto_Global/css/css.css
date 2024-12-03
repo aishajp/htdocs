@@ -141,3 +141,37 @@ body {
     margin-right: 10px;
     vertical-align: middle;
 }
+.section-cristo {
+    margin-top: 40px;
+}
+
+.section-cristo h2 {
+    color: #ff5a5f;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cristo-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.cristo-container img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cristo-texto {
+    flex: 1;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.cristo-texto p {
+    margin-bottom: 15px;
+}
