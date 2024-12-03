@@ -1,4 +1,4 @@
-import { GestorCarpinteria } from './gestorcarpinteria.js';
+import { GestorCarpinteria } from './gestor.js';
 import { Pieza } from 'piezas/pieza.js';
 
 class GestionPiezasUI {
