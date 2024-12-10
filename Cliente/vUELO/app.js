@@ -1,0 +1,144 @@
+class Vuelo {
+    constructor(codigo, plazas, importe) {
+        this.codigo = codigo;
+        this.plazas = plazas;
+        this.importe = importe;
+    }
+    }
+    class VueloMuyRentable {
+        constructor(codigo, ingreso) {
+        this.codigo = codigo;
+        this.ingreso = ingreso;
+    }
+    }
+let vuelo = [];
+let resultadosvuelos = [];
+let vuelosMuyRentables = [];
+
+function aniadirVuelo(){
+
+    const codigo = document.getElementById('codigo').value;
+    const plazas = document.getElementById('plazas').value;
+    const importe = document.getElementById('importe').value;
+
+    if(!codigo || isNaN(plazas) || isNaN(importe)){
+
+        alert('Por favor, rellena todos los campos correctamente');
+        return;
+    
+    }else if (plazas < 1 || importe < 1) {
+        alert('El número de plazas y el importe deben ser mayores a 0');
+        return;
+    
+    }else if (vuelo.some(v => v.codigo === codigo)) {
+            alert('Ya existe un vuelo con este código');
+            return;
+            }
+
+    
+
+    vuelo.push(new Vuelo(codigo, plazas, importe));
+    alert('Vuelo añadido correctamente');
+    
+    limpiarCampos();
+    actualizarTabla();
+    guardarVuelo();
+    
+        }
+function modificarVuelo(){
+
+    const codigo = document.getElementById('codigo').value;
+    const plazas = document.getElementById('plazas').value;
+    const importe = document.getElementById('importe').value;
+
+    if(!codigo || isNaN(plazas) || isNaN(importe)){
+        alert('Por favor, rellena todos los campos correctamente');
+        return;
+    }
+
+    const vueloEncontrado = vuelo.find(v => v.codigo === codigo);
+
+    if (vueloEncontrado){
+
+        vueloEncontrado.plazas = plazas;
+        vueloEncontrado.importe = importe;
+        alert('Vuelo modificado correctamente');
+        limpiarCampos();
+        actualizarTabla();
+        guardarVuelo();
+    }else{
+        alert(`No se ha encontrado el vuelo con el código: ${codigo}`);
+    }
+}
+
+function calcularVuelo(){
+
+    const resultadosvuelosDiv = document.getElementById("resultadosvuelos");
+    resultadosvuelosDiv.innerHTML = '';
+    vuelosMuyRentables = [];
+
+    vuelo.forEach((v) => {
+        const ingreso = (v.plazas * v.importe);
+        let mensaje='';
+
+        if(ingreso < 10000){
+            mensaje = `El vuelo con el codigo ${v.codigo} tiene unos ingresos de ${ingreso} con lo cual es poco rentable`;
+        }else if(ingreso >= 10000 && ingreso <= 20000 ){
+            mensaje = `El vuelo con el codigo ${v.codigo} tiene unos ingresos de ${ingreso} con lo cual es rentable`;
+        } else{
+            mensaje = `El vuelo con el codigo ${v.codigo} tiene unos ingresos de ${ingreso} con lo cual es muy rentable`;
+            vuelosMuyRentables.push(new VueloMuyRentable(v.codigo, ingreso));
+        }
+        
+    const p = document.createElement('p');
+    p.textContent = mensaje;
+    resultadosvuelosDiv.appendChild(p);
+    });
+    }
+    function mostrarMuyRentables() {
+        const resultadosvuelosDiv = document.getElementById("resultadosvuelos");
+        resultadosvuelosDiv.innerHTML = '';
+        
+        if (vuelosMuyRentables.length === 0) {
+            const p = document.createElement('p');
+            p.textContent = 'No hay vuelos muy rentables.';
+            resultadosvuelosDiv.appendChild(p);
+                return;
+    }
+    vuelosMuyRentables.forEach((v) => {
+    const p = document.createElement('p');
+    p.textContent = `Código: ${v.codigo}, Ingreso: ${v.ingreso}`;
+    resultadosvuelosDiv.appendChild(p);
+    });
+    }
+function guardarVuelo(){
+    localStorage.setItem('vuelos', JSON.stringify(vuelo));
+}
+
+function cargarVuelos(){
+    if(localStorage.getItem("vuelos")){
+    vuelo = JSON.parse(localStorage.getItem('vuelos'));
+    actualizarTabla();
+}
+}
+
+function actualizarTabla(){
+    
+    const tdoby = document.getElementById("vuelos")/*.querySelector("tbody")*/;
+    tdoby.innerHTML = '';
+    vuelo.forEach((v) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML=` 
+            <td>${v.codigo}</td> 
+            <td>${v.plazas}</td> 
+            <td>${v.importe}</td>
+            `;
+            tbody.appendChild(tr);
+    });
+}
+
+function limpiarCampos(){
+    document.getElementById('codigo').value = '';
+    document.getElementById('plazas').value = '';
+    document.getElementById('importe').value = '';
+}
