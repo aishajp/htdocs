@@ -1,27 +1,35 @@
 <?php
-// Generar 6 cartas (puedes cambiar esto para que sean imágenes)
-$cartas = [];
-for ($i = 1; $i <= 6; $i++) {
-    $cartas[] = "copas_{$i}.jpg"; 
+session_start();
+
+// Generar las cartas en parejas (solo 6 cartas en parejas de 2)
+if (!isset($_SESSION['cartas'])) {
+    // Crear 3 pares de cartas
+    $cartas = ['copas_02.jpg', 'copas_02.jpg', 'copas_03.jpg', 'copas_03.jpg', 'copas_05.jpg', 'copas_05.jpg'];
+    shuffle($cartas); // Mezclar las cartas
+    $_SESSION['cartas'] = $cartas; // Guardar en sesión
+    $_SESSION['cartas_levantadas'] = 0; // Inicializar contador de cartas levantadas
+    $_SESSION['carta_mostrada'] = null; // Carta actualmente mostrada
 }
-shuffle($cartas);
 
-$cartas_levantadas = 0;
-$cartas_mostradas = [];
+$cartas = $_SESSION['cartas'];
+$cartas_levantadas = $_SESSION['cartas_levantadas'];
+$carta_mostrada = $_SESSION['carta_mostrada'];
 
+// Manejar levantamiento de carta
 if (isset($_POST['carta'])) {
-    $carta = intval($_POST['carta']);
-    $cartas_levantadas++;
-    $cartas_mostradas[$carta] = $cartas[$carta];
+    $carta_index = intval($_POST['carta']);
+    $_SESSION['carta_mostrada'] = $carta_index; // Guardar la carta mostrada
+    $_SESSION['cartas_levantadas'] += 1; // Incrementar el contador
 }
 
-function mostrarCartas($cartas, $cartas_mostradas) {
+function mostrarCartas($cartas, $carta_mostrada) {
     $output = '';
     foreach ($cartas as $index => $carta) {
-        if (isset($cartas_mostradas[$index])) {
+        if ($index === $carta_mostrada) {
+            // Mostrar la carta seleccionada
             $output .= "<div class='carta'><img src='$carta' alt='Carta' /></div>";
         } else {
-            // Cambiar aquí para mostrar la imagen boca_abajo.jpg
+            // Mostrar las cartas boca abajo
             $output .= "<div class='carta'><img src='boca_abajo.jpg' alt='Carta boca abajo' /></div>";
         }
     }
@@ -42,9 +50,6 @@ function mostrarCartas($cartas, $cartas_mostradas) {
             display: inline-block;
             margin: 5px;
             text-align: center;
-            line-height: 150px;
-            color: white;
-            font-size: 24px;
         }
         .carta img {
             width: 100%;
@@ -53,20 +58,23 @@ function mostrarCartas($cartas, $cartas_mostradas) {
     </style>
 </head>
 <body>
-    <h1>Bienvenid@, !</h1>
+    <h1>Bienvenid@ <?php echo $_SESSION["login"]?>!</h1>
+    <h2>Cartas levantadas: <?php echo $cartas_levantadas; ?></h2>
+
+    <form method="post">
+        <?php
+        // Generar los botones para levantar las cartas
+        for ($i = 0; $i < 6; $i++) {
+            echo "<button type='submit' name='carta' value='$i'>Levantar carta " . ($i + 1) . "</button>";
+        }
+        ?>
+    </form>
+
     <div>
-        <h2>CARTAS LEVANTADAS: <?php echo $cartas_levantadas; ?></h2>
-        <h2>PAREJA: <input type="number" min="1" max="6" name="pareja" /></h2>
-        <form method="post">
-            <?php
-            for ($i = 0; $i < 6; $i++) {
-                echo "<button type='submit' name='carta' value='$i'>Levantar carta " . ($i + 1) . "</button>";
-            }
-            ?>
-        </form>
-    </div>
-    <div>
-        <?php echo mostrarCartas($cartas, $cartas_mostradas); ?>
+        <?php
+        // Mostrar las cartas según el estado actual
+        echo mostrarCartas($cartas, $carta_mostrada);
+        ?>
     </div>
 </body>
 </html>

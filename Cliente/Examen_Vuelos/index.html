@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos</title>
+    <script src="persona.js" defer></script>
+    <script src="calculoIMC.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Vuelos</h1>
+    <div>
+        <label for="codigo">Codigo: </label>
+        <input type="text" id="codigo" />
+        <label for="plazas">Nº de plazas </label>
+        <input type="number" id="plazas" />
+        <label for="importe">Importe: </label>
+        <input type="number" step="0.01" id="importe" />
+        <button onclick="añadirPersona()">Añadir</button>
+        <button onclick="modificarPersona()">Modificar</button>
+        <button onclick="calcularIMC()">Calcular</button>
+    </div>
+
+    <h2>Resultados</h2>
+    <div id="resultados"></div>
+</body>
+</html>
