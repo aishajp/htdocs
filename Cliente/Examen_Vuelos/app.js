@@ -33,8 +33,9 @@ function modificarVuelo(){
         return;
     }
 
-    const vuelo = vuelo.find(p => p.codigo === codigo);
-    if (vuelo){
+    const vueloEncontrado = vuelo.find(p => p.codigo === codigo);
+
+    if (vueloEncontrado){
 
         vuelo.plazas = plazas;
         vuelo.importe = importe;
@@ -87,9 +88,9 @@ function calcularVuelo(){
             mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es rentable`;
         } else if (calc > 20000) {
             mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es muy rentable`;
-            vuelosMuyRentables.push(new Vuelo(codigo, plazas, importe) );
+            vuelosMuyRentables.push(new Vuelo(vuelo.codigo, vuelo.plazas, vuelo.importe));
         }
-        const v = document.createElement('v');
+        const v = document.createElement('P');
         v.textContent = mensaje;
         resultadosvuelosDiv.appendChild(v);
     });
