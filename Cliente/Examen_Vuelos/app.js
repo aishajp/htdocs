@@ -15,9 +15,11 @@ function aniadirVuelo(){
 
     vuelo.push(new Vuelo(codigo, plazas, importe));
     alert('Vuelo añadido correctamente');
+    
+    limpiarCampos();
     actualizarTabla();
     guardarVuelo();
-    limpiarCampos();
+    
 }
 
 function modificarVuelo(){
