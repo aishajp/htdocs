@@ -1,7 +1,7 @@
 let vuelo = [];
 let resultadosvuelos = [];
 
-function aniadirVuelo(){
+function aniadirVuelo(){/*No se puede poner un numero de plazas menor a 10 ni un importe menor a 10*/
 
     const codigo = document.getElementById('codigo').value;
     const plazas = document.getElementById('plazas').value;
@@ -22,7 +22,7 @@ function aniadirVuelo(){
     
 }
 
-function modificarVuelo(){
+function modificarVuelo(){/*No se puede poner un numero de plazas menor a 10 ni un importe menor a 10*/
 
     const codigo = document.getElementById('codigo').value;
     const plazas = document.getElementById('plazas').value;
@@ -57,7 +57,7 @@ function cargarVuelos(){
 }
 }
 
-function actualizarTabla(){
+function actualizarTabla(){/*Necesito que esto se muestre en Lista de Vuelos */
     
     const tdoby = document.getElementById("vuelos").querySelector("tbody");
     tdoby.innerHTML = '';
@@ -72,7 +72,7 @@ function actualizarTabla(){
     });
 }
 
-function calcularVuelo(){
+function calcularVuelo(){/*Al hacer esta funcion se calcula el importe (plazas*importe) */
 
     const resultadosvuelosDiv = document.getElementById("resultadosvuelos");
     resultadosvuelosDiv.innerHTML = '';
@@ -83,10 +83,10 @@ function calcularVuelo(){
         let mensaje='';
 
         if(calc < 10000){
-            mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es poco Rentable`;
+            mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es poco rentable`;
         }else if(calc > 10000 && calc < 20000 ){
             mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es rentable`;
-        } else if (calc > 20000) {
+        } else if (calc > 20000) {/*Se creara otra coleccion en memoria con los vuelos que sean muy rentables */
             mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es muy rentable`;
             vuelosMuyRentables.push(new Vuelo(vuelo.codigo, vuelo.plazas, vuelo.importe));
         }

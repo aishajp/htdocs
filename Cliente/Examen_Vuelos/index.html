@@ -18,22 +18,26 @@
         <label for="importe">Importe: </label>
         <input type="number" step="0.01" id="importe" />
         <button onclick="aniadirVuelo()">Añadir</button>
+        <!--Que una vez añadido se muestre en Lista de Vuelos-->
         <button onclick="modificarVuelo()">Modificar</button>
+        <!--Poder modificar un vuelo y que se muestre en Lista de Vuelos-->
         <button onclick="calcularVuelo()">Calcular</button>
+        <!--Poder calcular el importe y que se muestre en Lista de Vuelos-->
     </div>
 
     <h2>Lista de Vuelos</h2>
+    <!-- Mostrar los vuelos añadidos, modificados y con el calculo hecho o no-->
     <table>
         <thead>
         <tr>
-        <th>Codigo</th>
-        <th>Plazas</th>
-        <th>Importe</th>
+        <td>Codigo</td>
+        <td>Plazas</td>
+        <td>Importe</td>
         </tr>
         </thead>
         <tbody id="vuelos">
         </tbody>
         </table>
-    <div id="resultados"></div>
+    <div id="resultadosvuelos"></div>
 </body>
 </html>
