@@ -71,6 +71,27 @@ function actualizarTabla(){
 
 function calcularVuelo(){
 
+    const resultadosvuelosDiv = document.getElementById("resultadosvuelos");
+    resultadosvuelosDiv.innerHTML = '';
+    const vuelosMuyRentables = [];
+
+    vuelo.forEach((vuelo) => {
+        const calc = (vuelo.plazas * vuelo.importe);
+        let mensaje='';
+
+        if(calc < 10000){
+            mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es poco Rentable`;
+        }else if(calc > 10000 && calc < 20000 ){
+            mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es rentable`;
+        } else if (calc > 20000) {
+            mensaje = `El vuelo con el codigo ${vuelo.codigo} tiene unos ingresos de ${calc} con lo cual es muy rentable`;
+            vuelosMuyRentables.push(new Vuelo(codigo, plazas, importe) );
+        }
+        const v = document.createElement('v');
+        v.textContent = mensaje;
+        resultadosvuelosDiv.appendChild(v);
+    });
+
 }
 
 function limpiarCampos(){
