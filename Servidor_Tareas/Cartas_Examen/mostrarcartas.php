@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-// Generar las cartas en parejas (solo 6 cartas en parejas de 2)
 if (!isset($_SESSION['cartas'])) {
     // Crear 3 pares de cartas
-    $cartas = ['copas_02.jpg', 'copas_02.jpg', 'copas_03.jpg', 'copas_03.jpg', 'copas_05.jpg', 'copas_05.jpg'];
+    $cartas = ['copas_02.jpg', 'copas_03.jpg','copas_05.jpg'];
     shuffle($cartas); // Mezclar las cartas
     $_SESSION['cartas'] = $cartas; // Guardar en sesión
     $_SESSION['cartas_levantadas'] = 0; // Inicializar contador de cartas levantadas
