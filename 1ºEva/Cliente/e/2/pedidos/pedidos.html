@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Pedidos - MaderAvilés</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-center">Gestión de Pedidos</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Formulario de Pedidos -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Nuevo Pedido</h2>
+                <form id="pedidoForm">
+                    <div class="mb-4">
+                        <label class="block mb-2">Número de Pedido</label>
+                        <input type="number" id="numeroPedido" required min="1" 
+                               class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2">Cliente</label>
+                        <input type="text" id="cliente" maxlength="50" required 
+                               class="w-full p-2 border rounded">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2">Fecha de Pedido</label>
+                        <input type="date" id="fechaPedido" required 
+                               class="w-full p-2 border rounded">
+                    </div>
+                    <div class="flex space-x-4">
+                        <button type="submit" 
+                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            Agregar Pedido
+                        </button>
+                        <button type="button" id="limpiarPedido"
+                                class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Pedidos Registrados</h2>
+                <div id="listaPedidos" class="overflow-y-auto max-h-96">
+                    <table class="w-full" id="tablaPedidos">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="p-2">Número</th>
+                                <th class="p-2">Cliente</th>
+                                <th class="p-2">Fecha</th>
+                                <th class="p-2">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoPedidos">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="pedidos.js"></script>
+</body>
+</html>

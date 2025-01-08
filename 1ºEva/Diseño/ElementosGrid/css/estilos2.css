@@ -1,0 +1,30 @@
+h1{
+    background-color: aqua;
+    display: inline;
+    height: 50px;
+    width: 400px;
+}
+
+h1{
+    display: inline;
+    background-color: blue;
+}
+
+p{
+    display: inline;
+    background-color: red;
+
+}
+
+ul{
+    background-color: blueviolet;
+}
+
+img{
+    display: inline;
+    background-color: chartreuse;
+}
+
+a{
+    display: block;
+}

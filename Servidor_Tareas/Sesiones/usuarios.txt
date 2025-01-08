@@ -1,3 +1,0 @@
-aisha:$2y$10$KvT1EJEABRf2kOBta5fDY.w0stnWzi5A3x7RvIxyc6360ns1JD5Fy:premium
-pepito:$2y$10$y2FVhqkmqLT5.MWV1x039ejDzCg40HmxYqAZ1AaNDMcL/28WJdLJK:estandar
-sergio:$2y$10$Un8CJuBSn8fx8x1CyewmPucOETaqQmV5PPEkTHKf0sDm3Gey7745q:premium
